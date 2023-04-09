@@ -5,7 +5,7 @@
 # nums = [1,3,5,2], target = 4
 # 1 and 3 equals to target 4
 
-# solution using hash
+# Solution using hash
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
         prevMap = {} # val : index
