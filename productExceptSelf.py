@@ -9,6 +9,8 @@
 # Input: nums = [1,2,3,4]
 # Output: [24,12,8,6]
 
+from typing import List
+
 class Solution:
     def productExceptSelf(self, nums: List[int]) -> List[int]:
         res = [1] * (len(nums))
@@ -22,3 +24,7 @@ class Solution:
             res[i] *= postfix 
             postfix *= nums[i]
         return res
+    
+nums = [1, 2, 3, 4]
+result = productExceptSelf(nums)
+print(result)
