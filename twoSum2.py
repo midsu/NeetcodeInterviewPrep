@@ -15,19 +15,27 @@
 # Output: [1,2]
 # Exmplanation: (index here started from 1, not 0). The sum of 2 and 7 is 9,
 # therefore index1 = 1, index2 = 2 
-
-
-class Solution:
+    
+    class Solution:
     def twoSum(self, numbers: List[int], target: int) -> List[int]:
+        # Initialize two variables l and r to track the indices of the two numbers
+        # in the numbers list that add up to the target
         l, r = 0, len(numbers) - 1
 
+        # Loop through the list until the two numbers that add up to the target are found
         while l < r:
+            # Calculate the sum of the two numbers at indices l and r
             curSum = numbers[l] + numbers[r]
 
+            # If the current sum is greater than the target, decrement r to move to a smaller number
             if curSum > target:
                 r -= 1
+            # If the current sum is less than the target, increment l to move to a larger number
             elif curSum < target:
                 l += 1
+            # If the current sum is equal to the target, return the indices of the two numbers as a list
             else:
                 return [l + 1, r + 1]
+
+        # If no two numbers that add up to the target are found, return an empty list
         return []
