@@ -13,17 +13,26 @@ from typing import List
 
 class Solution:
     def productExceptSelf(self, nums: List[int]) -> List[int]:
+        # Initialize a result list with all elements set to 1
         res = [1] * (len(nums))
 
+        # Calculate the prefix products
         prefix = 1
         for i in range(len(nums)):
+            # Store the prefix product of all elements before the current element
             res[i] = prefix
-            prefit *= nums[i]
+            prefix *= nums[i]
+        
+        # Calculate the postfix products
         postfix = 1
         for i in range(len(nums) - 1, -1, -1):
+            # Multiply the postfix product of all elements after the current element
             res[i] *= postfix 
             postfix *= nums[i]
+        
+        # Return the resulting list
         return res
+    
     
 nums = [1, 2, 3, 4]
 result = productExceptSelf(nums)
