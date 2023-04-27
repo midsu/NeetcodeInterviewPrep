@@ -11,12 +11,19 @@
 
 class Solution:
     def containDuplicate(self, nums: list[int]) -> bool:
+        # Initialize an empty set to keep track of unique integers
         hashset = set()
 
+        # Iterate through the input list
         for n in nums:
+            # If the integer is already in the hashset, then there's a duplicate
             if n in hashset:
                 return True
+            # Otherwise, add the integer to the hashset
             hashset.add(n)
+        
+        # If we've iterated through the entire list without finding a duplicate, then return False
         return False
-
+    
+    
 nums = [1,2,3,1]
