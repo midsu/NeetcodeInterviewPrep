@@ -12,6 +12,7 @@ class Node:
         Takes O(n)
         '''
         return "<Node data %s>" %self.data
+<<<<<<< HEAD
 ''' 
 N1 = Node(10)
 print(N1)
@@ -103,3 +104,5 @@ n2 = l.search(10)
 print("first search: ", n1)
 print("second search: ", n2)
     
+=======
+>>>>>>> 3dd31419d74a30e66e81f6c47778fe30fe07e99e
