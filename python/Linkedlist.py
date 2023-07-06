@@ -41,7 +41,6 @@ class Linkedlist:
         while current:  
             count +=1
             current = current.next_node #will terminate when current.next_node at Null (tail)
-        
         return count
 
     def add(self, data):
@@ -68,6 +67,25 @@ class Linkedlist:
                 current = current.next_node
         return None
             
+    def insert(self, data, index):
+        if index == 0:
+            self.add(data)
+        if index > 0:
+            new = Node(data)
+
+            position = index
+            current = self.head
+
+        while position > 1:
+            current = Node.next_node
+            position -= 1
+
+        prev_node = current
+        next_node = current.next_node
+
+        prev_node.next_node = new
+        new.next_node = next_node
+    
     def __repr__(self):
         '''
         Return a string representation of the list 
