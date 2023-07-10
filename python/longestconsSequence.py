@@ -1,3 +1,8 @@
+'''
+Finding the longest consecutive sequence in a list of number and returning its length
+Time complexity of O(n) and space complexity of O(n)
+'''
+
 class Solution:
     def longest_consecutive(self, nums: list[int]) -> int:
         numSet = set(nums)
@@ -11,3 +16,13 @@ class Solution:
                     length += 1
                 longest = max(length, longest)
         return longest
+
+sequence = [100, 4, 200, 1, 3, 2]
+solution = Solution()
+print(solution.longest_consecutive(sequence))
+
+'''
+input: [100, 4, 200, 1, 3, 2]
+Output: 4
+Explanation: [1,2,3,4] therefore longest cons sequence is 4
+'''
