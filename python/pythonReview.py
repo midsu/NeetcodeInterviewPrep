@@ -1,3 +1,10 @@
+# 
+# REFERENCE LINK: 
+# https://leetcode.com/discuss/study-guide/2122306/Python-Cheat-Sheet-for-Leetcode
+
+
+#------- LIST -------#
+
 nums = [1,2,3]
 
 nums.index(1) # returns index
@@ -49,3 +56,52 @@ Slice objects also behave slightly differently depending on the number of argume
 While the :-based notation is very helpful for simple slicing, the explicit use of slice() objects simplifies the programmatic generation of slicing.
 
 '''
+
+
+#------- DICTIONARY -------#
+
+dict = {'a':1,'b':2,'c':3}
+
+dict.keys() # returns list of keys of dictionary
+dict.values() # returns list of values of dictionary
+dict.get('a') # returns value for any corresponding key
+dict.items() # returns [('a',1),('b',2),('c',3)]
+dict.copy() # returns copy of the dictionary
+# NOTE : items() Returns view object that will be updated with any future changes to dict
+dict.pop(KEY) # pops key-value pair with that key
+dict.popitem() # removes most recent pair added
+dict.setDefault(KEY,DEFAULT_VALUE) # returns value of key, if key exists, else default value returned
+# If the key exist, this parameter(DEFAULT_VALUE) has no effect.
+# If the key does not exist, DEFAULT_VALUE becomes the key's value. 2nd argument's default is None.
+dict.update({KEY:VALUE}) # inserts pair in dictionary if not present, if present, corresponding value is overriden (not key)
+# defaultdict ensures that if any element is accessed that is not present in the dictionary
+# it will be created and error will not be thrown (which happens in normal dictionary)
+# Also, the new element created will be of argument type, for example in the below line
+# an element of type 'list' will be made for a Key that does not exist
+myDictionary = defaultdict(list) 
+
+
+
+#------- COUNTER -------#
+
+from collections import Counter #(capital 'C')
+# can also be used as 'collections.Counter()' in code
+
+list1 = ['x','y','z','x','x','x','y', 'z']
+
+# Initialization
+Counter(list1) # => Counter({'x': 4, 'y': 2, 'z': 2})
+Counter("Welcome to Guru99 Tutorials!") # => Counter({'o': 3, ' ': 3, 'u': 3, 'e': 2.....})
+
+# Updating
+counterObject = collections.Counter(list1)
+counterObject.keys() = [ 'x' , 'y' , 'z' ]
+most_common_element = counterObject.most_common(1) # [('x', 4)]
+counterObject.update("some string") # => Counter({'o': 3, 'u': 3, 'e': 2, 's': 2})
+counterObject['s'] += 1 # Increase/Decrease frequency
+
+# Accessing
+frequency_of_s = counterObject['s']
+
+# Deleting
+del couterObject['s']
