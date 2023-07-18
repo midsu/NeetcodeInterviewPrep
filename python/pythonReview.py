@@ -105,3 +105,43 @@ frequency_of_s = counterObject['s']
 
 # Deleting
 del couterObject['s']
+
+
+#------- DEQUE -------#
+
+from collections import deque
+
+queue = deque(['name','age','DOB'])
+
+queue.append("append_from_right") # Append from right
+queue.pop() # Pop from right
+
+queue.appendleft("fromLeft") # Append from left
+queue.popleft() # Pop from left
+
+queue.index(element,begin_index,end_index) # Returns first index of element b/w the 2 indices.
+queue.insert(index,element)
+queue.remove() # removes first occurrance
+queue.count() # obvious
+
+queue.reverse() # reverses order of queue elements
+
+
+#------- HEAPQ-------#
+
+import heapq # (minHeap by Default)
+
+nums = [5, 7, 9, 1, 3]
+
+heapq.heapify(nums) # converts list into heap. Can be converted back to list by list(nums).
+heapq.heappush(nums,element) # Push an element into the heap
+heapq.heappop(nums) # Pop an element from the heap
+#heappush(heap, ele) :- This function is used to insert the element mentioned in its arguments into heap. The order is adjusted, so as heap structure is maintained.
+#heappop(heap) :- This function is used to remove and return the smallest element from heap. The order is adjusted, so as heap structure is maintained.
+
+# Other Methods Available in the Library
+# Used to return the k largest elements from the iterable specified 
+# The key is a function with that accepts single element from iterable,
+# and the returned value from that function is then used to rank that element in the heap
+heapq.nlargest(k, iterable, key = fun)
+heapq.nsmallest(k, iterable, key = fun)
