@@ -348,3 +348,79 @@ print("Number of list is: ", x)
 # taking multiple inputs at a time separated by comma
 x = [int(x) for x in input("Enter multiple value: ").split(",")]
 print("Number of list is: ", x)
+
+
+#------- Math -------#
+
+import math
+  
+# Printing the log base e of 14
+print ("Natural logarithm of 14 is : ", end="")
+print (math.log(14))
+  
+# Printing the log base 5 of 14
+print ("Logarithm base 5 of 14 is : ", end="")
+print (math.log(14,5))
+Finding the ceiling and the floor value
+Ceil value means the smallest integral value greater than the number and the floor value means the greatest integral value smaller than the number. This can be easily calculated using the ceil() and floor() method respectively.
+# Python code to demonstrate the working of
+# ceil() and floor()
+ 
+# importing "math" for mathematical operations
+import math
+ 
+a = 2.3
+ 
+# returning the ceil of 2.3 (i.e 3)
+print ("The ceil of 2.3 is : ", end="")
+print (math.ceil(a))
+ 
+# returning the floor of 2.3 (i.e 2)
+print ("The floor of 2.3 is : ", end="")
+print (math.floor(a))
+
+Other Important functions
+#Constants
+# Print the value of Euler e (2.718281828459045)
+print (math.e)
+# Print the value of pi (3.141592653589793)
+print (math.pi)
+print (math.gcd(b, a))
+print (pow(3,4))
+# print the square root of 4
+print(math.sqrt(4))
+a = math.pi/6
+b = 30
+ 
+# returning the converted value from radians to degrees
+print ("The converted value from radians to degrees is : ", end="")
+print (math.degrees(a))
+ 
+# returning the converted value from degrees to radians
+print ("The converted value from degrees to radians is : ", end="")
+print (math.radians(b))
+
+** bin(int) **
+bin(anyNumber) # Returns binary version of number
+
+** divmod(int,int) **
+divmod(dividend,divisor) # returns tuple like (quotient, remainder)
+
+# How the custom comparator works
+
+# When providing a custom comparator, it should generally return an integer/float value that follows the following pattern (as with most other programming languages and frameworks):
+
+return a negative value (< 0) when the left item should be sorted before the right item
+return a positive value (> 0) when the left item should be sorted after the right item
+return 0 when both the left and the right item have the same weight and should be ordered "equally" without precedence
+from functools import cmp_to_key
+sorted(mylist, key=cmp_to_key(compare))
+
+#Example
+def compare(item1, item2):
+    if fitness(item1) < fitness(item2):
+        return -1
+    elif fitness(item1) > fitness(item2):
+        return 1
+    else:
+        return 0
