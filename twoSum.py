@@ -7,7 +7,7 @@
 
 # Solution using hash
 class Solution:
-    def twoSum(self, nums: List[int], target: int) -> List[int]:
+    def twoSum(self, nums: list[int], target: int) -> list[int]:
         prevMap = {} # val : index
 
         for i, n in enumerate(nums):
@@ -16,3 +16,8 @@ class Solution:
                 return [prevMap[diff], i]
             prevMap[n] = i
         return
+
+num = [1,3,5,2]
+trgt = 4
+s = Solution()
+print(s.twoSum(num,trgt))
