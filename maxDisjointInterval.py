@@ -13,7 +13,7 @@ Output: 2 -> [1, 2], [4, 6]
 class Solution:
     def interval(self, A):
         # sort the intervals by their endings
-        A.sort(ket = lambda x: x[1])
+        A.sort(key = lambda x: x[1])
 
         # the first interval as [start, end] earliest 
         prev_s, prev_e = A[0]
