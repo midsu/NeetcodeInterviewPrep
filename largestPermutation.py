@@ -20,7 +20,6 @@ Greedily replace the higher element
 N -> N-1 -> ....
 
 '''
-
 class Solution:
     # @param A : list of integers
     # @param B : integer
@@ -28,23 +27,23 @@ class Solution:
     def solve(self, A, B):
         i = 0
         _max = len(A)
-        d = {x : i for i, x in enumerate(A)}
+        d = {x: i for i, x in enumerate(A)}  # Create a dictionary to store element-to-index mapping
 
         while B and i < len(A):
-            j = d[_max]
+            j = d[_max]  # Get the index of the current maximum element
             if i == j:
-                pass
+                pass  # No need to swap if the current element is already at its correct position
             else:
-                B -= 1
-                A[i], A[j] = A[j], A[i]
-                d[A[i]], d[A[j]] = d[A[j]], d[A[i]]
+                B -= 1  # Decrement the number of swaps available
+                A[i], A[j] = A[j], A[i]  # Swap the elements at indices i and j
+                d[A[i]], d[A[j]] = d[A[j]], d[A[i]]  # Update the dictionary with new indices
 
             i += 1
-            _max -= 1
+            _max -= 1  # Decrement the value of the _max variable
 
         return A
 
 intervals = [3, 2, 4, 1, 5]
 solution = Solution()
-result = solution.solve(intervals, 3)
-print(result)
+result = solution.solve(intervals, 3)  # Call the solve method with the given list and B = 3
+print(result)  # Print the modified list after performing the swaps
